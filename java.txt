@@ -1,0 +1,303 @@
+               JAVA
+             --------
+CHARACTER 
+-------------------
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter the value:");
+        char ch=input.nextLine().charAt(0);
+        System.out.println(ch);
+    }
+}
+
+OUTPUT:
+
+    swetha--->S
+ 
+        STATIC 
+    ----------------
+
+class Main{
+    public static void main(String[] args){
+        System.out.println(Objectoriented.a);
+        Objectoriented.display();
+    }
+    }
+public class Objectoriented{
+    static int a=10;
+    public static void display(){
+    System.out.println("static method");
+}
+     OUTPUT
+-----------------
+
+10
+static method
+
+
+
+          STATIC & NON-STATIC
+         ----------------------------------
+
+class Main{
+    public static void main(String[] args){
+     Objectoriented ref=new Objectoriented();
+     System.out.println("Nonstatic var:"+ref.name);
+     System.out.println("Nonstatic var:"+ref.rollno);
+     System.out.println("Nonstatic var:"+Objectoriented.a);
+       Objectoriented.display();
+    }
+    }
+class Objectoriented{
+    String name="java";
+    String rollno="2332j36";
+    static  int a=10;
+    public static void display(){
+        System.out.println("static methods");
+    }
+}
+
+
+       OUTPUT
+    ------------------
+
+Nonstatic var:java
+Nonstatic var:2332j36
+Nonstatic var:10
+static methods
+
+      CONSTRUCTOR
+    ----------------------------
+
+class main{
+     public static void main(String[] args)
+     {
+         Sample ref=new Sample("BMW","M5");
+          Sample ref1=new Sample("Ford","M7");
+         System.out.println(ref.carname);
+         System.out.println(ref.carmodel);
+         System.out.println(ref1.carname);
+         System.out.println(ref1.carmodel);
+     }
+}
+class Sample{
+    String carname;
+    String carmodel;
+    //default constructor
+    Sample(String carname, String carmodel){
+        this.carname=carname;
+        this.carmodel=carmodel;
+    
+        System.out.println("Default constructor");
+    }
+}
+  
+     ENCAPTULATION
+  -------------------------------
+
+class main{
+     public static void main(String[] args)
+     {
+       Account ac =new Account("swetha",50000);
+       System.out.println("AccountHolder name:"+ac.getAccholder());
+       System.out.println("Holder Balance:"+ac.getBalance());
+     }
+}
+class Account{
+  private String Accholder;
+  private int Balance;
+  Account(String Accholder,int Balance){
+      this.Accholder=Accholder;
+      this.Balance=Balance;
+      
+  }
+  public String getAccholder(){
+      return Accholder;
+  }
+  public int getBalance(){
+      return Balance;
+  }
+}
+  
+          OUTPUT
+      ----------------
+AccountHolder name: swetha
+Holder Balance: 50000
+
+        ENCAPTULATION UPDATE
+   ----------------------------------------------
+
+  class main{
+     public static void main(String[] args)
+     {
+       Account ac =new Account("swethasekar",50000);
+       System.out.println("AccountHolder name:"+ac.getAccholder());
+       System.out.println("Holder Balance:"+ac.getBalance());
+       
+       ac.setAccholder("aparna");
+       System.out.println("update Accholder name:"+ac.getAccholder());
+     }
+}
+class Account{
+  private String Accholder;
+  private int Balance;
+  Account(String Accholder,int Balance){
+      this.Accholder=Accholder;
+      this.Balance=Balance;
+      
+  }
+  public String getAccholder(){
+      return Accholder;
+  }
+  public int getBalance(){
+      return Balance;
+  }
+  //update
+  public void setAccholder(String Accholder){
+      this.Accholder=Accholder;
+  }
+}
+  
+      OUTPUT
+     ---------------
+
+AccountHolder name:swethasekar
+Holder Balance:50000
+update Accholder name:aparna
+
+
+
+
+
+
+
+
+
+
+
+
+class main{
+     public static void main(String[] args)
+     {
+       Account ac =new Account("swethasekar",50000);
+       System.out.println("AccountHolder name:"+ac.getAccholder());
+       System.out.println("Holder Balance:"+ac.getBalance());
+       
+       ac.setAccholder("aparna");
+       System.out.println("update Accholder name:"+ac.getAccholder());
+       
+       acc.setBalance(acc.getBalance()+20000);
+       System.out.print
+     }
+}
+class Account{
+  private String Accholder;
+  private int Balance;
+  Account(String Accholder,int Balance){
+      this.Accholder=Accholder;
+      this.Balance=Balance;
+      
+  }
+  public String getAccholder(){
+      return Accholder;
+  }
+  public int getBalance(){
+      return Balance;
+  }
+  //update
+  public void setAccholder(String Accholder){
+      this.Accholder=Accholder;
+  }
+  public void setBalance(String Balance){
+      this.Balance=Balance;
+  }
+}
+  
+  
+  
+
+   OUTPUT
+  --------------
+
+Default constructor
+Default constructor
+BMW
+M5
+Ford
+M7
+
+    SET & GET
+ ---------------------
+
+import java.util.Scanner;
+  class main{
+     public static void main(String[] args)
+     
+     {
+        
+       Account acc=new Account("swethasekar",50000);
+       System.out.println("AccountHolder name:"+acc.getAccholder());
+       System.out.println("Holder Balance:"+acc.getBalance());
+       
+       acc.setAccholder("aparna");
+       System.out.println("update Accholder name:"+acc.getAccholder());
+      
+      // System.out.println("update Balance:"+(acc.getBalance()+amount));
+     
+      //  System.out.println("deposit successfully total balance:"+);
+     }
+}
+class Account{
+  private String Accholder;
+  private int Balance;
+  Account(String Accholder,int Balance){
+      this.Accholder=Accholder;
+      this.Balance=Balance;
+      
+  }
+  public String getAccholder(){
+      return Accholder;
+  }
+  public int getBalance(){
+      return Balance;
+  }
+  //update
+  public void setAccholder(String Accholder){
+      this.Accholder=Accholder;
+  }
+  
+  public void setBalance(int amount){
+      if(Balance>0)
+      Balance+=amount;
+      System.out.println("deposit successfully total balance:"+Balance);
+  }
+    
+       
+  
+}  
+
+   OUTPUT
+ ---------------
+AccountHolder name:swethasekar
+Holder Balance:50000
+update Accholder name:aparna
+
+
+
+   INHERITENCE
+   --------------------------
+
+--> one class is derived from other class
+
+   KEY FEATURES
+------------------------------
+
+* Super class*
+*multi-level*
+*multiple*
+*hierarchical*
+*hybrid*
+
