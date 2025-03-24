@@ -1,0 +1,50 @@
+collection in java: ArrayList
+
+package collection;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class EliminateVowels {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner scanner = new Scanner(System.in);
+        
+        // Create an ArrayList to store strings
+        ArrayList<String> stringList = new ArrayList<>();
+        
+        // Get the number of strings to input
+        System.out.print("Enter the number of strings you want to input: ");
+        int numberOfStrings = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+        
+        // Input strings from the user
+        for (int i = 0; i < numberOfStrings; i++) {
+            System.out.print("Enter string " + (i + 1) + ": ");
+            String inputString = scanner.nextLine();
+                                  stringList.add(inputString);
+        }
+        
+        // Process the strings to eliminate vowels
+        ArrayList<String> processedList = new ArrayList<>();
+        for (String str : stringList) {
+            String noVowels = eliminateVowels(str);
+            processedList.add(noVowels);
+        }
+        
+        // Display the results
+        System.out.println("Strings after eliminating vowels:");
+        for (String str : processedList) {
+            System.out.println(str);
+        }
+        
+        // Close the scanner
+        scanner.close();
+    }
+    
+    // Method to eliminate vowels from a string
+    private static String eliminateVowels(String str) {
+        return str.replaceAll("[aeiouAEIOU]", "");
+    }
+}
+
