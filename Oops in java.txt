@@ -1,0 +1,370 @@
+Oops concept in java: static and non-static states
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Objectoriented ref = new Objectoriented();
+         System.out.println(ref.name);
+           System.out.println(ref.rollno);
+         Objectoriented.Display();
+       System.out.println(Objectoriented.a);
+      
+    }
+}
+public class Objectoriented {
+    static int a = 10;
+    static int b = 20;
+    String name = "Java";
+    String rollno = "2332j01";
+    public static void Display() {
+        System.out.println("Static method");
+    }
+}
+
+
+Constructore in java:
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+     Sample ref = new Sample();
+    }
+}
+class Sample{
+    Sample(){
+        System.out.println("Default constructor");
+    }
+}
+
+
+Constructor : with parameters:
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+     Sample ref = new Sample("BMW","M5");
+     Sample ref1= new Sample("FORD","M7");
+     System.out.println(ref.carname);
+     System.out.println(ref.carmodel);
+     System.out.println(ref1.carname);
+     System.out.println(ref1.carmodel);
+    }
+}
+class Sample{
+    String carname;
+    String carmodel;
+    Sample(String carname , String carmodel){
+        this.carname=carname;
+        this.carmodel=carmodel;
+        System.out.println("Default constructor");
+    
+    }
+}
+
+
+Encapsulation in java: passing values
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+    Account ac = new Account("Abinaya",2000);
+    System.out.println(ac.getAccholder());
+    System.out.println(ac.getBalance());
+    
+    }
+}
+class Account{
+   private String Accholder;
+   private int Balance;
+   Account(String Accholder , int Balance){
+       this.Accholder=Accholder;
+       this.Balance=Balance;
+   }
+
+    public String getAccholder(){
+       return Accholder;
+    }
+    public int getBalance(){
+       return Balance;
+   }
+}
+
+updating values:
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+    Account ac = new Account("Abinaya",2000);
+    System.out.println(ac.getAccholder());
+    System.out.println(ac.getBalance());
+    
+    ac.setAccholder("Swathika");
+    System.out.println(ac.getAccholder());
+    
+    }
+}
+class Account{
+   private String Accholder;
+   private int Balance;
+   Account(String Accholder , int Balance){
+       this.Accholder=Accholder;
+       this.Balance=Balance;
+   }
+
+    public String getAccholder(){
+       return Accholder;
+    }
+    public int getBalance(){
+       return Balance;
+}
+    public void setAccholder(String Accholder){
+       this.Accholder=Accholder;
+    }
+}
+
+
+Adding credit balance:
+
+
+class Main {
+    public static void main(String[] args) {
+       Account ac = new Account("yogitha",2000,3000);
+       System.out.println("Account holdername:"+ac.getAccholder());
+       System.out.println("Holder balance:"+ac.getBalance());
+       ac.setAccholder("yogi");
+       System.out.println("Updated holder name:"+ac.getAccholder());
+       ac.setBalance(1000);
+        }
+}
+class Account {
+    private String Accholder;
+    private int Balance;
+    
+    Account(String Accholder , int Balance , int Credit)
+    {
+        this.Accholder=Accholder;
+        this.Balance=Balance;
+        
+    }
+   public String getAccholder()
+   {
+       return Accholder;
+   }
+   public int getBalance()
+   {
+       return Balance;
+   }
+   
+   public void setBalance(int amount)
+   {
+       if(Balance>0){
+           Balance+=amount;
+           System.out.println("Deposit successfully otal balance:"+Balance);
+       
+       }
+   }
+   public void setAccholder(String Accholder)
+   {
+       this.Accholder=Accholder;
+   }
+   
+   
+}
+
+withdraw details:
+
+class Main {
+    public static void main(String[] args) {
+       Account ac = new Account("yogitha",2000);
+       System.out.println("Account holdername:"+ac.getAccholder());
+       System.out.println("Holder balance:"+ac.getBalance());
+       ac.setAccholder("yogi");
+       System.out.println("Updated holder name:"+ac.getAccholder());
+       ac.setBalance(1000);
+       System.out.println("Deposit Amount:"+ac.getBalance());
+       ac.setWithdraw(2000);
+       System.out.println("Current Balance:"+ac.getBalance());
+        }
+       
+}
+class Account {
+    private String Accholder;
+    private int Balance;
+    Account(String Accholder , int Balance )
+    {
+        this.Accholder=Accholder;
+        this.Balance=Balance;
+       
+    }
+   public String getAccholder()
+   {
+       return Accholder;
+   }
+   public int getBalance()
+   {
+       return Balance;
+   }
+   public void setBalance(int amount)
+   {
+       if(Balance>0){
+           Balance+=amount;
+           
+       }
+   }
+   public void setWithdraw(int withdraw){
+       Balance -= withdraw ;
+       System.out.println("Withdrwan amount:"+withdraw);
+   }
+   public void setAccholder(String Accholder)
+   {
+       this.Accholder=Accholder;
+   }
+}
+
+
+Polymorphism : Shopping cart program (method overloading)
+
+class Shoppingitems{
+	void additems(String item_name , int price) {
+		System.out.println("item name is: "+item_name+"Price is: "+price);
+	}
+    void additems(String item_name , int price , int item_quantity) {
+    	int totalprice = price+item_quantity;
+    	System.out.println("item name is: "+item_name+"quantity: "+item_quantity+"Total is: "+totalprice);
+	}
+    void additems(String item_name , int price , int item_quantity , int discount) {
+		int amount = price*discount/100;
+		System.out.println("item name is: "+item_name+"quantity: "+item_quantity+"Total is: "+amount);
+		
+	}
+}
+public class Shopingcart {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Shoppingitems ref = new Shoppingitems();
+		ref.additems("Laptop", 50000);
+		ref.additems("Keyboard", 1000 , 3);
+		ref.additems("mouse", 500, 5, 10);
+	}
+
+}
+
+
+Polymorphism : Payment processing (method overriding)
+
+class Topayvia{
+	void pay(int amount) {
+		System.out.println("In hand amount"+amount);
+	}
+}
+class CreditUpi extends Topayvia{
+	void pay(int amount) {
+		System.out.println("Upipayment"+amount);
+	}
+}
+class Gpay extends Topayvia{
+	void pay(int amount) {
+		System.out.println("Gpay"+amount);
+	}
+}
+class Paytm extends Topayvia{
+	void pay(int amount) {
+		System.out.println("Paytm"+amount);
+	}
+}
+public class Paymentprocessing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  		Topayvia p = new Topayvia();
+		p.pay(1000);
+		Topayvia ref;
+		ref = new CreditUpi();
+		ref.pay(2000);
+		ref = new Gpay();
+		ref.pay(5000);
+		ref = new Paytm();
+		ref.pay(5000);
+	}
+}
+
+
+Abstraction: 
+
+abstract class Vehicle{
+	abstract void Startusing();
+}
+class Bike extends Vehicle {
+	void Startusing() {
+		System.out.println("Bike Starts with kick!.");
+	}
+}
+public class Vehicles {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Vehicle ref = new Bike();
+		ref.Startusing();
+	}
+
+}
+
+Interface: Multiple inheritence
+
+interface Superclass1{
+	void Sended();
+}
+interface Superclass2{
+	 void Sending(); 
+}
+class Subclass implements Superclass1,Superclass2{
+	public void Sended() {
+
+		System.out.println("Super class 1");
+
+	}
+	public void Sending() {
+
+		System.out.println("Super class 2");
+
+	}
+}
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Subclass s =new Subclass();
+		s.Sended();
+		s.Sending();
+	}
+
+}
+
+
+class Salary{
+	void pay(int hours, int perhourrate, int bonus) {
+		
+		int amt= hours*perhourrate+bonus;
+		System.out.println("Freelancers Salary: "+amt);
+	}
+	void pay(int hours, double perhourrate ) {
+		
+		double amt= hours*perhourrate;
+		System.out.println("Part-time employees Salary: "+amt);
+	}
+	void pay() {
+		System.out.println("Full-time employees Salary:30000");
+	}
+}
+public class Employeesalary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Salary ref = new Salary();
+		ref.pay();
+		ref.pay(15, 500.20);
+		ref.pay(20, 500, 1000);
+	}
+
+}
